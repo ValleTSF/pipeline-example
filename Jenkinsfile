@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        choice (name: 'DEPLO_ENV', choices:['int', 'stage', 'prod'], description: 'Target environment')
+        choice (name: 'DEPLOY_ENV', choices:['int', 'stage', 'prod'], description: 'Target environment')
     }
 
     stages{
