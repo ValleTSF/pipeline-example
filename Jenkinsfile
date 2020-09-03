@@ -35,14 +35,12 @@ pipeline{
                     archive 'target/calc-jsf-1.0.war'
                 }
             }
-           
-               
-
+              
         }
         stage('Deploy application'){
             agent any
             steps{
-                sh 'asadmin deploy target/calc-jsf-1.0.war'
+                sh 'asadmin --port 4848 deploy --force --name calc-${DEPLOY_ENV} --contextroot calc-${DEPLOY_ENV} target/calc-jsf-1.0.war'
             }
 
         }
