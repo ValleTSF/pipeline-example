@@ -42,7 +42,7 @@ pipeline{
         stage('Deploy application'){
             agent any
             steps{
-                sh 'mvn -v'
+                sh 'asadmin deploy target/calc-jsf-1.0.war'
             }
 
         }
